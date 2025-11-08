@@ -1,0 +1,92 @@
+.container {
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  background-color: white; /* ✅ ensures images don’t overlap visually */
+  border-radius: 8px;
+}
+
+/* Image */
+.container img {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.container:hover .button {
+  display: block;
+}
+.button {
+  display: none;
+  padding: 5px 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.button:hover {
+  background-color: var(--primary-shade);
+}
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Changed 1450px to 250px */
+  margin: 100px auto;
+  gap: 50px;
+  justify-items: center;
+}
+
+.products-container section {
+  margin: 0 auto;
+}
+/* ✅ Base flexed layout */
+.product_flexed {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  gap: 50px;
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+  /* padding: 30px; */
+}
+
+/* ✅ Product title spacing */
+.product_flexed h3 {
+  padding: 20px 0;
+  /* font-size: 1.5rem; */
+}
+
+/* ✅ Button inside flex layout */
+.product_flexed .button {
+  display: block;
+  position: static;
+  width: 150px;
+  margin-right: 40px;
+}
+
+/* ✅ Optional fixed height version */
+.product_flexed {
+  height: 50vh;
+}
+  .product_flexed img {
+    width: 300px !important;
+    height: auto;
+  }
+/* ✅ Make it responsive for small screens */
+@media (max-width: 768px) {
+  .product_flexed {
+    flex-direction: column;
+   display: flex;
+  }
+}
